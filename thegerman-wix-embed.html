@@ -1,0 +1,656 @@
+<title>THE GERMAN — Free Treatment Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#132E29;
+    --ink-soft:#2B4A44;
+    --paper:#FAF7F1;
+    --paper-raised:#FFFFFF;
+    --sage:#5F8069;
+    --sage-tint:#E7EEE7;
+    --sage-deep:#2E4A38;
+    --clay:#B98A54;
+    --clay-tint:#F4E7D6;
+    --clay-deep:#7A5A32;
+    --skin-tint:#F6EAE0;
+    --skin-deep:#8A5A3A;
+    --line:rgba(19,46,41,0.14);
+    --line-soft:rgba(19,46,41,0.08);
+    --text-2:#4E625D;
+    --radius:14px;
+    --serif:"Fraunces", Georgia, serif;
+    --sans:"Inter", -apple-system, sans-serif;
+    --mono:"IBM Plex Mono", monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  section{padding:88px 0;}
+  h1,h2,h3{font-family:var(--serif); font-weight:500; margin:0; letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--sage-deep); display:flex; align-items:center; gap:10px; margin-bottom:18px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1.5px; background:var(--sage-deep);}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-family:var(--sans); font-weight:600; font-size:15.5px; text-decoration:none;
+    padding:15px 28px; border-radius:999px; border:1.5px solid transparent; cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--sage-deep); color:#F6F4EE;}
+  .btn-primary:hover{box-shadow:0 10px 24px -12px rgba(46,74,56,0.55);}
+  .btn-outline{background:transparent; border-color:var(--line); color:var(--ink);}
+  .btn-outline:hover{border-color:var(--ink);}
+  .btn-clay{background:var(--clay); color:#3A2A15;}
+  .btn-clay:hover{box-shadow:0 10px 24px -12px rgba(122,90,50,0.5);}
+
+  /* header */
+  header{
+    position:sticky; top:0; z-index:40; background:rgba(250,247,241,0.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 0;}
+  .brand{font-family:var(--serif); font-weight:600; font-size:19px; letter-spacing:.02em;}
+  .brand span{display:block; font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-2); margin-top:2px;}
+  .nav-cta{font-size:14px; padding:11px 20px;}
+  .nav-links{display:flex; align-items:center; gap:28px; font-size:14px; font-weight:500;}
+  .nav-links a{text-decoration:none; color:var(--ink-soft); transition:color .15s ease;}
+  .nav-links a:hover{color:var(--sage-deep);}
+
+  /* hero */
+  .hero{padding-top:76px; padding-bottom:0; position:relative;}
+  .hero-inner{max-width:760px;}
+  .hero h1{font-size:clamp(34px,5vw,54px); line-height:1.08;}
+  .hero h1 em{font-style:italic; color:var(--sage-deep);}
+  .hero p.lede{font-size:18.5px; color:var(--text-2); margin:22px 0 32px; max-width:580px;}
+  .hero-actions{display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
+  .trust-line{font-size:13.5px; color:var(--text-2); display:flex; align-items:center; gap:8px;}
+  .trust-line .dot{width:6px; height:6px; border-radius:50%; background:var(--clay);}
+
+  /* fork diagram */
+  .fork{position:relative; height:120px; margin-top:56px;}
+  .fork svg{width:100%; height:100%; display:block;}
+
+  /* problem identification */
+  .problem{background:var(--paper-raised); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  .problem-head{max-width:640px; margin:0 auto 44px; text-align:center;}
+  .problem-head h2{font-size:30px;}
+  .problem-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:820px; margin:0 auto;}
+  .problem-item{
+    display:flex; gap:14px; align-items:flex-start; padding:22px 24px; border-radius:16px;
+    background:var(--paper); border:1px solid var(--line-soft);
+  }
+  .problem-item .mark{font-family:var(--serif); font-style:italic; font-size:22px; color:var(--clay); line-height:1; flex-shrink:0;}
+  .problem-item p{margin:0; font-size:15px; color:var(--ink-soft);}
+  .problem-resolve{
+    max-width:620px; margin:40px auto 0; text-align:center; font-family:var(--serif); font-size:19px;
+    line-height:1.5; color:var(--ink);
+  }
+  .problem-resolve em{font-style:italic; color:var(--sage-deep);}
+
+  /* audience section */
+  .audience-head{text-align:center; max-width:640px; margin:0 auto 48px;}
+  .audience-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .aud-card{
+    border-radius:20px; padding:36px 32px; border:1px solid var(--line-soft); position:relative; overflow:hidden;
+  }
+  .aud-card.dental{background:var(--sage-tint);}
+  .aud-card.skin{background:var(--skin-tint);}
+  .aud-tag{font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px; display:inline-block; padding:5px 12px; border-radius:999px;}
+  .aud-card.dental .aud-tag{background:rgba(46,74,56,0.1); color:var(--sage-deep);}
+  .aud-card.skin .aud-tag{background:rgba(138,90,58,0.12); color:var(--skin-deep);}
+  .aud-card h3{font-size:24px; margin-bottom:14px;}
+  .aud-card ul{margin:0 0 22px; padding:0; list-style:none;}
+  .aud-card li{display:flex; gap:10px; font-size:15px; color:var(--ink-soft); padding:7px 0; border-top:1px solid rgba(19,46,41,0.08);}
+  .aud-card li:first-child{border-top:none;}
+  .aud-card li::before{content:"—"; color:var(--text-2); flex-shrink:0;}
+  .aud-link{font-size:14.5px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:6px; cursor:pointer; background:none; border:none; padding:0; font-family:var(--sans);}
+  .aud-card.dental .aud-link{color:var(--sage-deep);}
+  .aud-card.skin .aud-link{color:var(--skin-deep);}
+
+  /* what's inside */
+  .inside{background:var(--ink); color:#F4F1EA; border-radius:28px; margin:56px 28px 0; padding:64px 48px;}
+  .inside-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:44px; flex-wrap:wrap;}
+  .inside-head h2{font-size:32px; color:#FBF8F2; max-width:420px;}
+  .inside-head p{color:rgba(244,241,234,0.65); max-width:340px; font-size:15px; margin:0;}
+  .inside-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1px; background:rgba(244,241,234,0.14); border-radius:16px; overflow:hidden;}
+  .inside-item{background:var(--ink); padding:26px 22px;}
+  .inside-item .num{font-family:var(--mono); font-size:12px; color:var(--clay); display:block; margin-bottom:10px;}
+  .inside-item h4{font-family:var(--serif); font-weight:500; font-size:17px; margin:0 0 8px; color:#FBF8F2;}
+  .inside-item p{font-size:13.5px; color:rgba(244,241,234,0.62); margin:0; line-height:1.5;}
+  .inside-cta{margin-top:36px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;}
+  .inside-cta .btn{background:var(--clay); color:#3A2A15;}
+  .inside-cta .btn:hover{box-shadow:0 10px 24px -12px rgba(185,138,84,0.55);}
+  .inside-cta span{font-size:13px; color:rgba(244,241,234,0.55);}
+
+  /* exchange strip */
+  .exchange-strip{display:flex; gap:0; max-width:820px; margin:40px auto 0; border:1px solid var(--line-soft); border-radius:18px; overflow:hidden;}
+  .exchange-strip .col{flex:1; padding:26px 28px;}
+  .exchange-strip .col:first-child{border-right:1px solid var(--line-soft); background:var(--paper-raised);}
+  .exchange-strip .col:last-child{background:var(--sage-tint);}
+  .exchange-strip h4{font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-2); margin:0 0 12px;}
+  .exchange-strip ul{margin:0; padding:0; list-style:none;}
+  .exchange-strip li{font-size:14.5px; padding:5px 0; color:var(--ink-soft);}
+
+  /* trust / about */
+  .trust{padding-top:96px;}
+  .trust-about{
+    display:grid; grid-template-columns:1fr 1.3fr; gap:44px; align-items:center; max-width:980px; margin:0 auto 64px;
+    background:var(--paper-raised); border:1px solid var(--line-soft); border-radius:20px; padding:40px;
+  }
+  .trust-about .mark-badge{
+    width:64px; height:64px; border-radius:50%; background:var(--sage-tint); color:var(--sage-deep);
+    display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:24px; font-weight:600;
+  }
+  .trust-about h3{font-size:22px; margin:18px 0 10px;}
+  .trust-about p{margin:0; color:var(--text-2); font-size:15px;}
+  .why-head{text-align:center; max-width:600px; margin:0 auto 40px;}
+  .why-head h3{font-size:26px;}
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; max-width:980px; margin:0 auto 64px;}
+  .why-item{background:var(--paper-raised); border:1px solid var(--line-soft); border-radius:16px; padding:26px 22px;}
+  .why-item .why-num{font-family:var(--mono); font-size:12px; color:var(--clay); display:block; margin-bottom:12px;}
+  .why-item h4{font-family:var(--serif); font-weight:500; font-size:16.5px; margin:0 0 8px;}
+  .why-item p{font-size:13.5px; color:var(--text-2); margin:0; line-height:1.5;}
+  .proof-strip{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-bottom:52px;}
+  .proof-badge{font-family:var(--mono); font-size:12.5px; letter-spacing:.04em; padding:9px 16px; border-radius:999px; border:1px solid var(--line); color:var(--ink-soft);}
+  .testimonials-page{padding-top:96px;}
+  .testimonials{display:grid; grid-template-columns:repeat(2,1fr); gap:22px; max-width:900px; margin:0 auto;}
+  .t-card{background:var(--paper-raised); border:1px solid var(--line-soft); border-radius:16px; padding:28px;}
+  .t-card .stars{color:var(--clay); font-size:14px; letter-spacing:2px; margin-bottom:14px;}
+  .t-card p.quote{font-family:var(--serif); font-style:italic; font-size:18px; line-height:1.45; margin:0 0 18px; color:var(--ink);}
+  .t-card .who{font-size:13.5px; color:var(--text-2); display:flex; align-items:center; gap:10px;}
+  .t-card .avatar{width:38px; height:38px; border-radius:50%; background:var(--sage-tint); color:var(--sage-deep); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .t-card .avatar svg{width:19px; height:19px;}
+  .t-card .avatar.skin{background:var(--skin-tint); color:var(--skin-deep);}
+  .proof-note{text-align:center; font-size:12.5px; color:var(--text-2); margin-top:28px; max-width:900px; margin-left:auto; margin-right:auto;}
+
+  /* strong mid-funnel CTA band */
+  .cta-band{background:var(--sage-deep); margin:96px 28px 0; border-radius:28px;}
+  .cta-band-inner{
+    padding:56px 48px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;
+  }
+  .cta-band-inner .eyebrow{margin-bottom:14px;}
+  .cta-band-inner .eyebrow::before{background:rgba(245,242,234,0.75);}
+  .cta-band h2{color:#FBF8F2; font-size:30px; max-width:440px; margin-bottom:10px;}
+  .cta-band p{color:rgba(245,242,234,0.75); font-size:15px; margin:0; max-width:380px;}
+  .cta-band-btn{
+    font-size:16.5px; padding:18px 34px; flex-shrink:0;
+    box-shadow:0 14px 32px -12px rgba(185,138,84,0.55);
+  }
+  .cta-band-btn:hover{box-shadow:0 16px 36px -10px rgba(185,138,84,0.7);}
+
+  /* faq */
+  .faq{padding-top:96px; max-width:760px; margin:0 auto;}
+  .faq-item{border-top:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%; background:none; border:none; text-align:left; padding:22px 4px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-family:var(--serif); font-size:18px; color:var(--ink); gap:16px;}
+  .faq-q .plus{font-family:var(--mono); font-size:20px; color:var(--sage-deep); flex-shrink:0; transition:transform .2s ease;}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{margin:0 4px 22px; color:var(--text-2); font-size:15px; max-width:640px;}
+
+  /* form */
+  .capture{padding-top:96px;}
+  .capture-shell{background:var(--sage-deep); border-radius:28px; padding:64px 48px; color:#F5F2EA; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
+  .capture-copy .eyebrow{color:rgba(245,242,234,0.75);}
+  .capture-copy .eyebrow::before{background:rgba(245,242,234,0.75);}
+  .capture-copy h2{color:#FBF8F2; font-size:30px; margin-bottom:16px;}
+  .capture-copy p{color:rgba(245,242,234,0.72); font-size:15.5px; margin:0 0 24px; max-width:380px;}
+  .capture-copy ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .capture-copy li{font-size:14px; color:rgba(245,242,234,0.85); display:flex; gap:10px; align-items:flex-start;}
+  .capture-copy li::before{content:"✓"; color:var(--clay); font-weight:700; flex-shrink:0;}
+  .capture-reassure{margin-top:26px; padding-top:22px; border-top:1px solid rgba(245,242,234,0.18); display:flex; gap:18px; flex-wrap:wrap;}
+  .capture-reassure span{font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:rgba(245,242,234,0.7); display:flex; align-items:center; gap:7px;}
+  .capture-reassure span::before{content:"●"; color:var(--clay); font-size:8px;}
+  .form-card{background:#FBF8F2; border-radius:20px; padding:34px; color:var(--ink);}
+  .form-card h3{font-size:19px; margin-bottom:4px;}
+  .form-card .sub{font-size:13.5px; color:var(--text-2); margin:0 0 22px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:12.5px; font-weight:600; margin-bottom:7px; color:var(--ink-soft);}
+  .field input[type=text], .field input[type=email], .field input[type=tel]{
+    width:100%; padding:12px 14px; border-radius:10px; border:1.5px solid var(--line); font-family:var(--sans);
+    font-size:15px; background:#fff; color:var(--ink);
+  }
+  .field input:focus{outline:none; border-color:var(--sage-deep);}
+  .radio-row{display:flex; gap:10px;}
+  .radio-opt{flex:1; position:relative;}
+  .radio-opt input{position:absolute; opacity:0; inset:0; cursor:pointer;}
+  .radio-opt span{
+    display:block; text-align:center; padding:11px 8px; border-radius:10px; border:1.5px solid var(--line);
+    font-size:14px; font-weight:600; color:var(--ink-soft); transition:all .15s ease;
+  }
+  .radio-opt input:checked + span{border-color:var(--sage-deep); background:var(--sage-tint); color:var(--sage-deep);}
+  .field-error{font-size:12.5px; color:#A23B2E; margin-top:6px; display:none;}
+  .field.has-error input{border-color:#A23B2E;}
+  .field.has-error .field-error{display:block;}
+  .form-card .btn{width:100%; padding:15px; font-size:15.5px; margin-top:6px;}
+  .form-note{font-size:11.5px; color:var(--text-2); text-align:center; margin-top:12px;}
+  .success-state{display:none; text-align:center; padding:26px 8px;}
+  .success-state .icon{width:46px; height:46px; border-radius:50%; background:var(--sage-tint); color:var(--sage-deep); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:22px;}
+  .success-state h3{margin-bottom:8px;}
+  .success-state p{color:var(--text-2); font-size:14.5px; margin:0;}
+
+  /* sticky mobile cta */
+  .mobile-cta{
+    display:none; position:fixed; left:16px; right:16px; bottom:16px; z-index:50;
+    background:var(--sage-deep); border-radius:999px; box-shadow:0 14px 30px -10px rgba(19,46,41,0.45);
+  }
+  .mobile-cta a{display:block; text-align:center; padding:16px; color:#F6F4EE; font-weight:600; font-size:15px; text-decoration:none;}
+
+  footer{padding:56px 0 40px; border-top:1px solid var(--line-soft); margin-top:40px;}
+  .foot-grid{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px;}
+  .foot-brand{font-family:var(--serif); font-size:17px; font-weight:600;}
+  .foot-brand span{display:block; font-size:13px; color:var(--text-2); font-weight:400; margin-top:4px; font-family:var(--sans);}
+  .foot-links{display:flex; gap:24px; font-size:13.5px; color:var(--text-2);}
+  .foot-legal{font-size:12px; color:var(--text-2); margin-top:28px; opacity:.8;}
+
+  @media (max-width:820px){
+    section{padding:64px 0;}
+    .audience-grid, .testimonials, .capture-shell, .trust-about, .exchange-strip{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .cta-band{margin:64px 16px 0;}
+    .cta-band-inner{padding:36px 26px; text-align:center; justify-content:center;}
+    .cta-band-inner > div{width:100%;}
+    .cta-band p{margin:0 auto;}
+    .exchange-strip .col:first-child{border-right:none; border-bottom:1px solid var(--line-soft);}
+    .problem-grid{grid-template-columns:1fr;}
+    .inside{margin:40px 16px 0; padding:44px 26px;}
+    .capture-shell{padding:40px 26px;}
+    .wrap{padding:0 20px;}
+    .mobile-cta{display:block;}
+    body{padding-bottom:78px;}
+    .nav-links{display:none;}
+  }
+
+  @media print{
+    header{position:static; box-shadow:none;}
+    .nav-links{display:none;}
+    .mobile-cta{display:none !important;}
+    section{padding:32px 0;}
+    .inside{margin:24px 0 0; border-radius:12px;}
+    .capture-shell{border-radius:12px;}
+    .aud-card, .t-card, .why-item, .problem-item, .inside-item, .trust-about, .form-card, .exchange-strip{break-inside:avoid;}
+    .hero{break-after:page;}
+    .problem{break-after:page;}
+    .whats-inside{break-after:page;}
+    .trust{break-after:page;}
+    .testimonials-page{break-after:page;}
+    .cta-band{margin-top:0;}
+    .faq{break-after:page;}
+    a.btn{box-shadow:none !important;}
+  }
+</style>
+
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">THE GERMAN<span>Dental &amp; Skin Aesthetics — Bali</span></div>
+    <nav class="nav-links">
+      <a href="#audience">The Guide</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#guide-form">Get Started</a>
+    </nav>
+    <a href="#guide-form" class="btn btn-primary nav-cta">Get the free guide</a>
+  </div>
+</header>
+
+<!-- ============ 1. HERO SECTION ============ -->
+<!-- Headline + subheadline + primary CTA. Must communicate: what this page is about, who it's for, what problem it solves — inside the 3–5 second decision window. -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="eyebrow">Free guide for prospective patients</div>
+      <h1>Considering dental or skin treatment in Bali? <em>Know your options</em> before you book.</h1>
+      <p class="lede">The Ultimate Guide to Dental &amp; Skin Treatments in Bali gives you a clear, judgment-free breakdown of your options, what affects cost and timeline, and exactly what to ask — so your first visit to THE GERMAN starts with clarity, not guesswork.</p>
+      <div class="hero-actions">
+        <a href="#guide-form" class="btn btn-primary">Download the free guide</a>
+        <div class="trust-line"><span class="dot"></span>Free PDF · Sent instantly · No obligation to book</div>
+      </div>
+    </div>
+    <div class="fork">
+      <svg viewBox="0 0 1000 120" preserveAspectRatio="none">
+        <path d="M500,0 L500,30 C500,55 350,55 260,80 C200,96 150,104 90,110" fill="none" stroke="#2E4A38" stroke-width="1.5" stroke-opacity="0.35"/>
+        <path d="M500,0 L500,30 C500,55 650,55 740,80 C800,96 850,104 910,110" fill="none" stroke="#8A5A3A" stroke-width="1.5" stroke-opacity="0.35"/>
+        <circle cx="500" cy="4" r="4" fill="#B98A54"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. PROBLEM IDENTIFICATION SECTION ============ -->
+<!-- "Does this sound like you?" framing — validates the visitor's problem before the solution appears. Builds emotional connection and keeps them scrolling. -->
+<section class="problem">
+  <div class="wrap">
+    <div class="problem-head">
+      <div class="eyebrow" style="justify-content:center;">Before you download</div>
+      <h2>Does this sound familiar?</h2>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-item"><span class="mark">“</span><p>You're not sure if you need veneers, whitening, or something else entirely — and every clinic seems to recommend something different.</p></div>
+      <div class="problem-item"><span class="mark">“</span><p>You've searched "skin treatments Bali" and now have a dozen tabs open with conflicting advice.</p></div>
+      <div class="problem-item"><span class="mark">“</span><p>You don't want to sit through a sales-heavy consultation just to get basic information.</p></div>
+      <div class="problem-item"><span class="mark">“</span><p>You want to walk in already knowing what questions to ask — not figuring it out in the chair.</p></div>
+    </div>
+    <p class="problem-resolve">You're not behind — you're just missing the right information. <em>That's exactly what this guide is for.</em></p>
+  </div>
+</section>
+
+<!-- ============ 3. SOLUTION / VALUE PROPOSITION SECTION ============ -->
+<!-- Introduces the lead magnet, explains what it is and how it helps, gives a sneak peek, and includes the download CTA. Answers "what exactly am I getting?" -->
+<section class="audience" id="audience">
+  <div class="wrap">
+    <div class="audience-head">
+      <div class="eyebrow" style="justify-content:center;">Introducing the guide</div>
+      <h2 style="font-size:30px;">One free guide, matched to your path.</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="aud-card dental">
+        <span class="aud-tag">Dental</span>
+        <h3>Straighter, healthier, more confident</h3>
+        <ul>
+          <li>How to compare treatments — from veneers and implants to orthodontics and root canals</li>
+          <li>What determines cost, timeline, and recovery</li>
+          <li>Questions worth asking at your first consultation</li>
+        </ul>
+        <button class="aud-link" data-interest="dental">Explore dental options →</button>
+      </div>
+      <div class="aud-card skin">
+        <span class="aud-tag">Skin aesthetics</span>
+        <h3>Treatments matched to your skin's actual needs</h3>
+        <ul>
+          <li>A plain-language look at injectables, laser, and skin-quality treatments</li>
+          <li>How to choose between options based on your goals</li>
+          <li>What to ask before booking any procedure</li>
+        </ul>
+        <button class="aud-link" data-interest="skin">Explore skin options →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="whats-inside">
+  <div class="wrap">
+    <div class="inside">
+      <div class="inside-head">
+        <h2>What's actually inside the guide</h2>
+        <p>Seven short sections. Written to be read in one sitting, before your consultation — not after.</p>
+      </div>
+      <div class="inside-grid">
+        <div class="inside-item"><span class="num">01</span><h4>Introduction</h4><p>What to consider before choosing any treatment.</p></div>
+        <div class="inside-item"><span class="num">02</span><h4>Dental treatments</h4><p>Clear, educational overview of your dental options.</p></div>
+        <div class="inside-item"><span class="num">03</span><h4>Skin aesthetic treatments</h4><p>Clear, educational overview of your skin treatment options.</p></div>
+        <div class="inside-item"><span class="num">04</span><h4>Choosing the right treatment</h4><p>The key factors worth weighing first.</p></div>
+        <div class="inside-item"><span class="num">05</span><h4>Questions to ask</h4><p>What to raise with your provider before you decide.</p></div>
+        <div class="inside-item"><span class="num">06</span><h4>Consultation checklist</h4><p>How to walk in prepared, not overwhelmed.</p></div>
+        <div class="inside-item"><span class="num">07</span><h4>Next steps</h4><p>How to reach THE GERMAN when you're ready.</p></div>
+      </div>
+      <div class="inside-cta">
+        <a href="#guide-form" class="btn">Get my free copy →</a>
+        <span>Takes 10 seconds. Delivered straight to your inbox.</span>
+      </div>
+    </div>
+
+    <div class="exchange-strip">
+      <div class="col">
+        <h4>You share</h4>
+        <ul><li>First name</li><li>Email address</li><li>Your main interest</li></ul>
+      </div>
+      <div class="col">
+        <h4>You get</h4>
+        <ul><li>The free guide, instantly</li><li>Treatment info relevant to you</li><li>Zero pressure to book</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. TRUST BUILDERS (CREDIBILITY SECTION) ============ -->
+<!-- About the practice + testimonials/social proof — reduces perceived risk before the visitor commits their email. -->
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-about">
+      <div>
+        <div class="mark-badge">TG</div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:10px;">About THE GERMAN</div>
+        <h3>German clinical standards, Bali calm.</h3>
+        <!-- Source: about-us.html on the-german.clinic (vision statement + founders), fetched from the client's live site. -->
+        <p>THE GERMAN combines German medical standards with the calm natural beauty of Bali — precise dentistry and modern facial aesthetics in a structured, patient-focused environment. Founded by <strong>Dr. Michael Trolle</strong> (20+ years in dental care and clinic management in Germany, specializing in implantology and prosthetic dentistry) and <strong>Nina Trolle, M.Sc.</strong> (healthcare administration and clinical process optimization), the clinic is run by a multidisciplinary team of dental specialists, an orthodontist, and a dermatologist working from one integrated treatment plan.</p>
+      </div>
+    </div>
+
+    <!-- Why choose THE GERMAN — differentiators sourced from the client's site (about-us.html, technology.html). -->
+    <div class="why-head">
+      <div class="eyebrow" style="justify-content:center;">Why choose THE GERMAN</div>
+      <h3>Four reasons patients read the guide first.</h3>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><span class="why-num">01</span><h4>German-trained leadership</h4><p>Founded by a German dentist with 20+ years of clinical and practice-management experience.</p></div>
+      <div class="why-item"><span class="why-num">02</span><h4>Dental + dermatology, one team</h4><p>Dentists, an orthodontist, and a dermatologist plan treatment together — not in separate silos.</p></div>
+      <div class="why-item"><span class="why-num">03</span><h4>In-house lab &amp; diagnostics</h4><p>Digital diagnostics and an in-house laboratory keep planning and fabrication under one roof.</p></div>
+      <div class="why-item"><span class="why-num">04</span><h4>Based in Berawa, Bali</h4><p>Easy to reach for a consultation once you're ready — Jl. Karang Suwung, Berawa.</p></div>
+    </div>
+
+    <div class="proof-strip">
+      <span class="proof-badge">Dental &amp; skin aesthetics specialists</span>
+      <span class="proof-badge">Based in Bali</span>
+      <span class="proof-badge">Consultation-first approach</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEDICATED TESTIMONIALS SECTION ============ -->
+<!-- All quotes below are clearly-labeled SAMPLE copy — the-german.clinic website has no published reviews, so nothing genuine could be sourced. Replace every card with a real, attributed patient quote before this page goes live. -->
+<section class="testimonials-page" id="testimonials">
+  <div class="wrap">
+    <div class="audience-head">
+      <div class="eyebrow" style="justify-content:center;">Real feedback</div>
+      <h2 style="font-size:30px;">What guide readers say.</h2>
+    </div>
+    <div class="testimonials">
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"I finally understood the difference between my treatment options before I ever stepped into the clinic. That made the consultation so much shorter."</p>
+        <div class="who"><span class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.2" r="3.6"/><path d="M4.5 19.4c1.4-3.7 4.4-5.7 7.5-5.7s6.1 2 7.5 5.7"/></svg></span>Guide reader, dental treatment</div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Straightforward and unrushed — exactly the tone I needed while deciding on a skin treatment."</p>
+        <div class="who"><span class="avatar skin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.2" r="3.6"/><path d="M4.5 19.4c1.4-3.7 4.4-5.7 7.5-5.7s6.1 2 7.5 5.7"/></svg></span>Guide reader, skin aesthetics</div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"I liked that it was educational first — I didn't feel sold to before I'd even walked through the door."</p>
+        <div class="who"><span class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.2" r="3.6"/><path d="M4.5 19.4c1.4-3.7 4.4-5.7 7.5-5.7s6.1 2 7.5 5.7"/></svg></span>Guide reader, dental treatment</div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Answered exactly the questions I was too embarrassed to ask a clinic directly."</p>
+        <div class="who"><span class="avatar skin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.2" r="3.6"/><path d="M4.5 19.4c1.4-3.7 4.4-5.7 7.5-5.7s6.1 2 7.5 5.7"/></svg></span>Guide reader, skin aesthetics</div>
+      </div>
+    </div>
+    <p class="proof-note">Sample quotes shown for template purposes — swap in verified, attributed patient testimonials before publishing.</p>
+  </div>
+</section>
+
+<!-- ============ STRONG MID-FUNNEL CTA BAND ============ -->
+<!-- Single path, by design: every CTA on this page funnels to the email-capture form, never straight to WhatsApp — the guide download is the one conversion this page asks for. -->
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <div class="eyebrow" style="color:rgba(245,242,234,0.75);">Don't decide blind</div>
+      <h2>Stop guessing. Start with the guide.</h2>
+      <p>Ten seconds now saves you an awkward, uninformed consultation later — and it's yours to keep either way.</p>
+    </div>
+    <a href="#guide-form" class="btn btn-clay cta-band-btn">Get my free guide now →</a>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="audience-head" style="text-align:left; margin-bottom:32px;">
+    <div class="eyebrow">Before you download</div>
+    <h2 style="font-size:28px;">A few things people usually ask</h2>
+  </div>
+
+  <div class="faq-item open">
+    <button class="faq-q"><span>Is this just a sales pitch in disguise?</span><span class="plus">+</span></button>
+    <div class="faq-a"><p>No. The guide is educational — it explains treatment categories and what to consider, without pushing a specific procedure. Any next step is entirely up to you.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q"><span>Do I have to book a consultation after downloading?</span><span class="plus">+</span></button>
+    <div class="faq-a"><p>Not at all. The guide is yours to keep whether or not you ever book. If you do want to talk to someone, the last page shows you how.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q"><span>Will you spam my inbox?</span><span class="plus">+</span></button>
+    <div class="faq-a"><p>You'll get the guide, and occasional follow-up content relevant to what you told us you're interested in — dental or skin. You can opt out any time.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q"><span>I'm not sure if I need dental or skin treatment yet — can I still download it?</span><span class="plus">+</span></button>
+    <div class="faq-a"><p>Yes. The guide covers both categories, so you can read either section, or both, before deciding what to explore further.</p></div>
+  </div>
+</section>
+
+<!-- ============ 5. FINAL CTA SECTION (DECISION POINT) ============ -->
+<!-- Clear CTA + reassurance ("free", "instant", "no pressure") — pushes hesitant visitors to act and removes last-minute doubt. -->
+<section class="capture" id="guide-form">
+  <div class="wrap">
+    <div class="capture-shell">
+      <div class="capture-copy">
+        <div class="eyebrow">Free download</div>
+        <h2>Get your copy of the guide</h2>
+        <p>Takes about ten seconds. Delivered straight to your inbox — read it whenever you're ready.</p>
+        <ul>
+          <li>No cost, no obligation to book</li>
+          <li>Written for both dental and skin aesthetics patients</li>
+          <li>Practical enough to bring to your consultation</li>
+        </ul>
+        <div class="capture-reassure">
+          <span>100% free</span>
+          <span>Instant access</span>
+          <span>No pressure to book</span>
+        </div>
+      </div>
+      <div class="form-card">
+        <form id="leadForm" novalidate>
+          <h3>Download the free guide</h3>
+          <p class="sub">First name, email, and your main interest — that's all we need.</p>
+
+          <div class="field" id="field-name">
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="fname" placeholder="Your first name">
+            <div class="field-error">Enter your first name.</div>
+          </div>
+
+          <div class="field" id="field-email">
+            <label for="femail">Email address</label>
+            <input type="email" id="femail" name="femail" placeholder="you@email.com">
+            <div class="field-error">Enter a valid email address.</div>
+          </div>
+
+          <div class="field" id="field-interest">
+            <label>Main interest</label>
+            <div class="radio-row">
+              <label class="radio-opt"><input type="radio" name="interest" value="dental"><span>Dental</span></label>
+              <label class="radio-opt"><input type="radio" name="interest" value="skin"><span>Skin aesthetics</span></label>
+            </div>
+            <div class="field-error">Choose the option closest to your interest.</div>
+          </div>
+
+          <div class="field">
+            <label for="fphone">WhatsApp number <span style="font-weight:400; color:var(--text-2);">(optional)</span></label>
+            <input type="tel" id="fphone" name="fphone" placeholder="+62 8xx xxxx xxxx">
+          </div>
+
+          <button type="submit" class="btn btn-clay">Download the free guide</button>
+          <p class="form-note">By downloading, you agree to receive the guide and related follow-up content by email.</p>
+        </form>
+
+        <div class="success-state" id="successState">
+          <div class="icon">✓</div>
+          <h3>Your guide is on its way</h3>
+          <p>Check your inbox — we've sent The Ultimate Guide to Dental &amp; Skin Treatments in Bali to your email.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">THE GERMAN<span>Dental &amp; Skin Aesthetics — Bali, Indonesia</span></div>
+    <div class="foot-links">
+      <a href="#audience">Treatments</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#guide-form">Free guide</a>
+      <a href="https://wa.me/6281125025022" target="_blank" rel="noopener">WhatsApp us</a>
+    </div>
+  </div>
+  <div class="wrap"><p class="foot-legal">This page is a course-project template built for THE GERMAN's Module 3 lead-generation exercise. Replace sample testimonials, the "About" paragraph, and connect the form to a live email tool before publishing to patients.</p></div>
+</footer>
+
+<div class="mobile-cta"><a href="#guide-form">Get the free guide →</a></div>
+
+<script>
+  document.querySelectorAll('.aud-link').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var interest = btn.getAttribute('data-interest');
+      document.getElementById('guide-form').scrollIntoView({behavior:'smooth', block:'start'});
+      var radio = document.querySelector('input[name=interest][value="'+interest+'"]');
+      if(radio){ radio.checked = true; }
+    });
+  });
+
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight + 'px'; }
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = 0;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  var form = document.getElementById('leadForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var valid = true;
+    var name = document.getElementById('fname');
+    var email = document.getElementById('femail');
+    var interest = document.querySelector('input[name=interest]:checked');
+
+    var nameField = document.getElementById('field-name');
+    var emailField = document.getElementById('field-email');
+    var interestField = document.getElementById('field-interest');
+    nameField.classList.remove('has-error');
+    emailField.classList.remove('has-error');
+    interestField.classList.remove('has-error');
+
+    if(!name.value.trim()){ nameField.classList.add('has-error'); valid = false; }
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+    if(!emailOk){ emailField.classList.add('has-error'); valid = false; }
+    if(!interest){ interestField.classList.add('has-error'); valid = false; }
+
+    if(!valid){ return; }
+
+    form.style.display = 'none';
+    document.getElementById('successState').style.display = 'block';
+  });
+</script>
+
